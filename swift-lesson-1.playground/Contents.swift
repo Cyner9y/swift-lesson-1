@@ -2,7 +2,6 @@ import UIKit
 
 //Задание №1 - Решить квадратное уравнение
 
-var str = "Hello, playground"
 let a = Double(1)
 let b = Double(8.5)
 let c = Double(16)
