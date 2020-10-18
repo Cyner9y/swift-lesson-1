@@ -3,9 +3,7 @@ import UIKit
 //Задание №1 - Написать функцию, которая определяет, четное число или нет.
 
 func IsEvenNumber(number:Int){
-    number % 2 == 0 ? print("Число " + String(number) + " четное") : print("Число " + String(number) + " нечетное")
-    //для дробных чисел
-    //number.remainder(dividingBy: 2) == 0 ? print("Число " + String(number) + " четное") : print("Число " + String(number) + " нечетное")
+    print("число \(number) \(number % 2 == 0 ? "":"не")четное")
 }
 
 print("Задание №1:")
@@ -21,7 +19,7 @@ IsEvenNumber(number: -3)
 //Задание №2 - Написать функцию, которая определяет, делится ли число без остатка на 3.
 
 func IsDivThreeWithoutRemainder(number:Int){
-    number % 3 == 0 ? print("Число " + String(number) + " делится без остатка на 3.") : print("Число " + String(number) + " не делится без остатка на 3")
+    print("число \(number) \(number % 3 == 0 ? "":"не ")делится без остатка на 3")
 }
 
 print("\nЗадание №2:")
@@ -36,7 +34,7 @@ IsDivThreeWithoutRemainder(number: -5)
 
 //Задание №3 - Создать возрастающий массив из 100 чисел
 
-func increasingArray(initialValue: Int ,size: Int) -> Array<Int>{
+func increasingArray(initialValue: Int ,size: Int) -> [Int]{
     var arr = [Int]()
     for index in 0...size - 1 {
         arr.append(initialValue + index)
