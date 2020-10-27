@@ -29,7 +29,7 @@ extension Car {
     }
 }
 
-class TeslaСar: Car, CustomStringConvertible {
+class TeslaСar: Car {
     
     var brand = "Tesla"
     var model = "Model3"
@@ -39,10 +39,6 @@ class TeslaСar: Car, CustomStringConvertible {
     
     let spoiler: Bool
     let n2O: Bool
-    var description: String {
-        return "Этот класс описывает автомобиль \(brand) \(model) у которого спойлер: \(spoiler) и закись азота: \(n2O)"
-    }
-    
     
     func handleLights() {
         isLightsOn = (isLightsOn ? false : true)
@@ -54,7 +50,14 @@ class TeslaСar: Car, CustomStringConvertible {
     }
 }
 
-class TrunkCar: Car, CustomStringConvertible {
+extension TeslaСar: CustomStringConvertible {
+    
+    var description: String {
+        return "Этот класс описывает автомобиль \(brand) \(model) у которого спойлер: \(spoiler) и закись азота: \(n2O)"
+    }
+}
+
+class TrunkCar: Car {
     
     var brand = "Dodge"
     var model = "RAM"
@@ -63,9 +66,6 @@ class TrunkCar: Car, CustomStringConvertible {
     var isLightsOn = false
     let towHitch: Bool
     let winch: Bool
-    var description: String {
-        return "Этот класс описывает автомобиль \(brand) \(model) у которого фаркоп: \(towHitch) и лебедка: \(winch)"
-    }
     
     func handleLights() {
         isLightsOn = (isLightsOn ? false : true)
@@ -74,6 +74,12 @@ class TrunkCar: Car, CustomStringConvertible {
     init(towHitch: Bool, winch: Bool) {
         self.towHitch = towHitch
         self.winch = winch
+    }
+}
+
+extension TrunkCar: CustomStringConvertible {
+    var description: String {
+        return "Этот класс описывает автомобиль \(brand) \(model) у которого фаркоп: \(towHitch) и лебедка: \(winch)"
     }
 }
 
